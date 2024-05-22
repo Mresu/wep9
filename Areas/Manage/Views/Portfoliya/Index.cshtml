@@ -1,0 +1,32 @@
+﻿@using WebApplication9.Models;
+@model List<Portfolio>
+@{
+    int count = 0;
+}
+<div class="container">
+    <h1> <a class=" btn btn-primary" asp-action="Create">CREATE></a></h1>
+    <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">Description</th>
+      <th scope="col">Img</th>
+    </tr>
+  </thead>
+  <tbody>
+    @foreach(var item in Model)
+            {
+                count++;
+                <tr>
+      <th scope="row">@count</th>
+      <td>@item.Name</td>
+          <td>@item.Description</td>
+      <td><img src="~/Upload/@item.ImgUrl" /></td>
+      </tr>
+            }
+   
+  </tbody>
+            
+    </table>
+</div>
